@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+a {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: inherit;
+    border-bottom: 1px dashed #337ab7;
+}
+
+body, input, textarea, select {
+    font-size: 2em;
+    line-height: 23px;
+}
+
+body {
+    background-color: #fff;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.req {
+    color: red;
+}
+
+.processInfo {
+    padding: 15px;
+    font-style: italic;
+}
+
+.failed {
+    background-color: rgba(255,0,0,0.175);
+}
+
+.success {
+    background-color: rgba(0,255,0,0.175);
+}
+
+p.formError {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    font-size: 0.8em;
+    right: 0;
+    color: red;
+    font-style: italic;
+}
+
+/* main page */
+body > section > .center {
+    width: 800px;
+    padding: 50px 0;
+    overflow: visible;
+}
+
+body > section > .center > .main {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+}
+
+section .main .panel-heading > h2 {
+    padding: 10px 0 0 0;
+    font-size: 3em;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+section .main > h4 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 65px;
+}
+
+section .main > .nav {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 150px;
+}
+
+section .main > .nav ol {
+    width: 350px;
+}
+
+section .main > .nav li {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+section .main > .nav li:hover,
+ a:hover,
+ a:active,
+ a:active:focus {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* list page */
+.list > .center, .form > .center {
+    width: 1200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 0 50px 0;
+    overflow: hidden;
+}
+
+.list table tbody tr > td {
+    max-width: 200px;
+}
+
+/* add page */
+.form > .center {
+    width: 800px;
+}
+
+.form form {
+    width: 80%;
+}
+
+.form form > div {
+    position: relative;
+    margin: 10px 0px;
+    height: 60px;
+}
+
+.form form > div > label {
+    position: absolute;
+    margin-right: 20px;
+    top: 0;
+}
+
+.form form > div > input {
+    position: absolute;
+    width: 60%;
+    right: 0;
+    top: 0;
+}
+
+.form form > button {
+    width: auto;
+    float: right;
+}
