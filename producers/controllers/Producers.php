@@ -43,10 +43,10 @@ class Producers extends RestController {
         require_once 'vendor/Validator.php';
         $validator = new Validator();
         $validator->setRules(array(
-            'name' => array('rules' => array('required', 'trim', 'xssClean')),
+            'name' => array('rules' => array('trim', 'xssClean')),
             'site_url' => array('rules' => array('prepUrl', 'trim')),
             'logo_filename' => array('rules' => array('imageFileName', 'trim', 'xssClean')),
-            'ordering' => array('rules' => array('required', 'trim', 'integer', 'xssClean')),
+            'ordering' => array('rules' => array('required', 'trim', 'xssClean')),
             'source_id' => array('rules' => array('trim', 'xssClean')),
         ));
 

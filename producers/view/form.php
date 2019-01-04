@@ -4,17 +4,17 @@
             <h2>Dodaj producenta</h2>
             <h6><a href="http://<?=$_SERVER['HTTP_HOST'].LOCAL_URI?>" title="Strona główna">Strona główna</a></h6>
         </div>
-        <div class="processInfo <?=isset($errors['apiErrors']) ? 'failed' : ($success ? 'success' : '')?>">
+<!--        <div class="processInfo --><?//=isset($errors['apiErrors']) ? 'failed' : ($success ? 'success' : '')?><!--">-->
             <?if($success):?>
                 Pomyślnie dodano producenta.
             <?else:?>
                 <?=isset($errors['apiErrors']) ? $errors['apiErrors'] : ''?>
             <?endif?>
-        </div>
+<!--        </div>-->
         <form action="http://<?=$_SERVER['HTTP_HOST'].LOCAL_URI?>producers/add" method="post" class="panel-body" accept-charset="utf-8">
             <div>
                 <label for="name">Nazwa:<spam class="req">*</spam> </label>
-                <input type="text" name="name" id="name" value="<?=isset($fields['name'])?$fields['name']:''?>" class="form-control" placeholder="Nazwa" required="" autofocus="">
+                <input type="text" name="name" id="name" value="<?=isset($fields['name'])?$fields['name']:''?>" class="form-control" placeholder="Nazwa" autofocus="">
                 <p class="formError"><?=isset($errors['name'])?$errors['name']:''?></p>
             </div>
             <div>
@@ -28,7 +28,7 @@
                 <p class="formError"><?=isset($errors['logo_filename'])?$errors['logo_filename']:''?></p>
             </div>
             <div>
-                <label for="ordering">Zamówienie:<spam class="req">*</spam> </label>
+                <label for="ordering">ID Zamówienia:<spam class="req">*</spam> </label>
                 <input type="text" name="ordering" id="ordering" value="<?=isset($fields['ordering'])?$fields['ordering']:''?>" class="form-control" placeholder="Zamówienie" required="" autofocus="">
                 <p class="formError"><?=isset($errors['ordering'])?$errors['ordering']:''?></p>
             </div>
