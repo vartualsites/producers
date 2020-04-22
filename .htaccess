@@ -1,0 +1,20 @@
+#AuthName "Witaj w wersji testowej"
+#AuthType Basic
+#AuthUserFile /home/mnhck91/domains/virtualsites.pl/.htpasswd
+#AuthGroupFile /dev/null
+#require user admin
+#Satisfy Any
+#Deny from all
+#Allow from 83.142.125.234
+<IfModule mod_rewrite.c>
+    Options FollowSymLinks
+    RewriteEngine On
+    RewriteBase /producers
+
+    RewriteCond %{REQUEST_URI} ^producers.*
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
