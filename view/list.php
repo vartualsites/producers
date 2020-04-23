@@ -36,7 +36,7 @@
                             </td>
                             <td>
                                 <?if($row['logo']):?>
-                                    <?if (count(parse_url($row['logo'])) > 2 && strncmp(parse_url($row['logo'])['scheme'], 'http', 4) === 0): ?>
+                                    <?if (strncmp(parse_url($row['logo'])['scheme'], 'http', 4) === 0): ?>
                                         <?if(end(explode('.', $row['logo'])) != 'png'):?>
                                         <img src="<?=$row['logo']?>" alt="Brak" style="max-width: 100px;max-height: 100px;"/>
                                         <?endif;?>
