@@ -4,11 +4,11 @@
             <h2>Lista producentów</h2>
             <h6><a href="http://<?=$_SERVER['HTTP_HOST'].LOCAL_URI?>" title="Strona główna">Strona główna</a></h6>
         </div>
-<!--        <div class="processInfo --><?//=isset($errors['apiErrors']) ? 'failed' : ''?><!--">-->
-<!--            --><?//if(!$success):?>
-<!--                --><?//=isset($errors['apiErrors']) ? $errors['apiErrors'] : ''?>
-<!--            --><?//endif?>
-<!--        </div>-->
+        <div class="processInfo <?=isset($errors['apiErrors']) ? 'failed' : ''?>">
+            <?if(!$success):?>
+                <?=isset($errors['apiErrors']) ? $errors['apiErrors'] : ''?>
+            <?endif?>
+        </div>
         <div class="panel-body">
             <?if(isset($rows) && $rows):?>
                 <table class="table table-striped">
