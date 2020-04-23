@@ -10,7 +10,7 @@
             <?endif?>
         </div>
         <div class="panel-body">
-            <?if(isset($rows) && $rows):?>
+            <?if(isset($rows) && count($rows) > 0):?>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -28,17 +28,17 @@
                             <td><?=$row['id']?></td>
                             <td><?=\Isystems\Helpers\CustomHelper::clearString(\Isystems\Helpers\CustomHelper::cutString( $row['name'], 1, 20))?></td>
                             <td>
-                                <?if($row['page']):?>
+                                <?if(!empty($row['page'])):?>
                                     <a href="<?=\Isystems\Helpers\CustomHelper::prepUrl($row['page']);?>" target="_blank" title="<?=\Isystems\Helpers\CustomHelper::cutString($row['name']);?>"><?=\Isystems\Helpers\CustomHelper::cutString($row['name']);?></a>
                                 <?else:?>
                                     ---
                                 <?endif?>
                             </td>
                             <td>
-                                <?if($row['logo']):?>
+                                <?if(!empty($row['logo'])):?>
                                     <?if (strncmp(parse_url($row['logo'])['scheme'], 'http', 4) === 0): ?>
                                         <?if(end(explode('.', $row['logo'])) != 'png'):?>
-                                        <img src="<?=$row['logo']?>" alt="Brak" style="max-width: 100px;max-height: 100px;"/>
+                                            <img src="<?=$row['logo']?>" alt="Brak" style="max-width: 100px;max-height: 100px;"/>
                                         <?endif;?>
                                     <?else:?>
                                         <?=$row['logo'];?>
@@ -47,7 +47,7 @@
                                     ---
                                 <?endif?>
                             </td>
-                           <!-- <td><?=$row['priority']?></td>-->
+                            <td><?=$row['priority']?></td>
                             <td><?=$row['ordering']?></td>
                             <td><?=$row['source_id'] ? $row['source_id'] : '---'?></td>
                         </tr>
