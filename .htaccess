@@ -9,7 +9,6 @@
 <IfModule mod_rewrite.c>
     Options FollowSymLinks
     RewriteEngine On
-    RewriteBase /producers
 
     RewriteCond %{REQUEST_URI} ^producers.*
     RewriteRule ^(.*)$ index.php?/$1 [L]
