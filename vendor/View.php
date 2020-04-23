@@ -4,6 +4,7 @@ namespace Isystems\Vendor;
 
 class View {
 
+    const VIEW_PATH = __DIR__.'/../view/';
     /**
      * Adding content view if exists and extract its own params
      *
@@ -22,9 +23,9 @@ class View {
             $path = $path.'.php';
 
         $content = '';
-        if(file_exists('view/'.$path)) {
+        if(file_exists(self::VIEW_PATH.$path)) {
             ob_start();
-            require_once 'view/'.$path;
+            require_once self::VIEW_PATH.$path;
             $content = ob_get_clean();
         }
 
@@ -38,6 +39,6 @@ class View {
      * @return HTML
      */
     private function showTemplate($content = null) {
-        require_once 'view/index.php';
+        require_once self::VIEW_PATH.'index.php';
     }
 }

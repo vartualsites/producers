@@ -12,8 +12,8 @@ class Producers extends RestController {
     protected $endpoint = '/producers';
 
     public function getAll() {
-//        $this->sendRequest();
-        $results = null;// $this->getResults();
+        $this->sendRequest();
+        $results = $this->getResults();
         $rows = $errors = array();
         $success = false;
 
@@ -55,16 +55,16 @@ class Producers extends RestController {
 
         if($validator->run()) {
             $inputs = $validator->getValues();
-//            $this->setPostInputs($inputs);
-//            $this->sendRequest();
-//            $results = null;//$this->getResults();
-//            if($results === null) {
-//                $errors['apiErrors'] = $this->getErrors();
-//            } else {
-//                $success = $results->success;
-//                //$errors['apiErrors'] = $this->getErrors();
-//                $errors['apiErrors'] = Errors::getErrorMessage($results->error->reason_code);
-//            }
+            $this->setPostInputs($inputs);
+            $this->sendRequest();
+            $results = null;//$this->getResults();
+            if($results === null) {
+                $errors['apiErrors'] = $this->getErrors();
+            } else {
+                $success = $results->success;
+                //$errors['apiErrors'] = $this->getErrors();
+                $errors['apiErrors'] = Errors::getErrorMessage($results->error->reason_code);
+            }
             $db = self::getDb();
             $db->postProducer($inputs);
 

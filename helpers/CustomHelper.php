@@ -45,7 +45,6 @@ class CustomHelper {
         if($str === '')
             return '';
 
-        $result = strip_tags(trim(str_replace(array('>', '<'), '', $str)));
-        return $result;
+        return strip_tags(trim(str_replace(array('>', '<'), '', $str)));
     }
 }

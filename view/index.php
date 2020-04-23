@@ -7,6 +7,6 @@
     <link rel="stylesheet" type="text/css" href="<?='http://'.$_SERVER['HTTP_HOST'].LOCAL_URI?>css/style.css" />
 </head>
 <body>
-<?=isset($content) && $content ? $content : ''?>
+<?=isset($content) && $content ? $content : 'No content ;-)'?>
 </body>
 </html>

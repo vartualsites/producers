@@ -8,7 +8,7 @@ class Database {
             'host' => 'localhost',
             'user' => 'mnhck91_producer',
             'password' => '2ky0fBfB',
-            'db' => 'mnhck91_producer',
+            'db' => 'mnhck91_producers',
         );
 
         return $config;
