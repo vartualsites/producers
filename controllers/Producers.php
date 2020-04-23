@@ -34,7 +34,6 @@ class Producers extends RestController {
         if (empty($rows)) {
             $rows = self::getDb()->getProducers();
         }
-        var_dump($rows);die;
         $view->renderTemplate('list.php', array('rows' => $rows, 'errors' => $errors, 'success' => $success));
     }
 
