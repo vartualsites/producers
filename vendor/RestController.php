@@ -35,7 +35,7 @@ abstract class RestController implements RestInterface {
 
     public static function getDb()
     {
-        return Database::mysqli(new \Isystems\Config\Database());
+        return Database::mysqli();
     }
 
     public function sendRequest() {
