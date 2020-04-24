@@ -6,9 +6,9 @@ class Database
 {
     private $connection;
 
-    public static function mysqli(\Isystems\Config\Database $database)
+    public static function mysqli()
     {
-        $config = $database::getCredentials();
+        $config = \Isystems\Config\Database::getCredentials();
         $connection = mysqli_connect($config['host'], $config['user'], $config['password'], $config['db'])
                         or die('Cannot connect to database');
 
